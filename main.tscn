@@ -3,8 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://bq3var2vqodsy" path="res://assets/bg1.png" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dnliuqcqwtu71" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dp44pvvlgsgl7" path="res://ebox5.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://5lu6cdt8ty0g" path="res://AVO LOGO/avo-logo.png" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://df5cp01qrw525" path="res://assets/ebox16-l.png" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://xgt3b6y3e3hi" path="res://assets/rove.png" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://blkybmr7gpjv2" path="res://assets/cube225.png" id="6_7mycd"]
+[ext_resource type="FontFile" uid="uid://tbedcp3qc5y6" path="res://Inter/static/Inter_18pt-Regular.ttf" id="7_272bh"]
 
 [sub_resource type="Animation" id="Animation_kek77"]
 length = 0.001
@@ -45,6 +48,10 @@ _data = {
 &"new_animation": SubResource("Animation_4c57u")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font = ExtResource("7_272bh")
+font_size = 56
+
 [node name="main" type="CanvasLayer" unique_id=56481423]
 script = ExtResource("1_5vw27")
 
@@ -62,7 +69,22 @@ offset_transform_position = Vector2(1800, 0)
 texture = ExtResource("1_0xm2m")
 stretch_mode = 6
 
-[node name="Color" type="ColorRect" parent="." unique_id=389794929]
+[node name="Bg2" type="TextureRect" parent="." unique_id=420076497]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1854.0
+offset_right = 1854.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(1800, 0)
+texture = ExtResource("1_0xm2m")
+stretch_mode = 6
+
+[node name="BgColor" type="ColorRect" parent="." unique_id=389794929]
 unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,7 +92,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
-color = Color(0, 0, 0, 0.59607846)
+color = Color(0, 0, 0, 1)
+
+[node name="avo-logo" type="TextureRect" parent="." unique_id=870594567]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 42.0
+offset_right = -1394.0
+offset_bottom = -3227.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("3_5vw27")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="avo-solar" type="TextureRect" parent="." unique_id=430446484]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1376.0
+offset_top = 42.0
+offset_right = -48.0
+offset_bottom = -3227.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("3_5vw27")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024334128]
 libraries/ = SubResource("AnimationLibrary_h2yge")
@@ -115,6 +169,7 @@ text = "Intelligent Management
 text = "Built-in WiFi for seamless remote intelligent APP monitoring and real-time management; supports APP OTA & remote firmware updates to cut after-sales costs."
 
 [node name="rove" parent="." unique_id=907655103 instance=ExtResource("2_0xm2m")]
+visible = false
 
 [node name="Image" parent="rove" index="0" unique_id=893206886]
 texture = ExtResource("5_lquwl")
@@ -155,18 +210,124 @@ text = "Lithium Battery Activation
 text = "When the battery enters hibernation due to low power, the inverter can use photovoltaic power or mains power to charge and activate the battery, without the need for manual operation."
 
 [node name="Label" parent="rove/HBoxContainer/Panel3/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 45560476) index="0" unique_id=1796206169]
-text = "Easy Installation
+text = "Built-in Solar Charger
 "
 
 [node name="Label2" parent="rove/HBoxContainer/Panel3/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 45560476) index="1" unique_id=387013047]
-text = "Designed light and simple with built-in pulleys, it allows one-person moving and installation."
+text = "Photovoltaic charging compatible, no separate solar charge controller required."
 
 [node name="Label" parent="rove/HBoxContainer/Panel4/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 404412639) index="0" unique_id=1074766516]
-text = "Intelligent Management
+text = "Support Lithium/Lead-acid Battery
 "
 
 [node name="Label2" parent="rove/HBoxContainer/Panel4/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 404412639) index="1" unique_id=1621885325]
-text = "Built-in WiFi for seamless remote intelligent APP monitoring and real-time management; supports APP OTA & remote firmware updates to cut after-sales costs."
+text = "This inverter is compatible with lead-acid and lithium batteries, intelligently matching charge and discharge management strategies."
+
+[node name="cube225" parent="." unique_id=1021578458 instance=ExtResource("2_0xm2m")]
+visible = false
+
+[node name="Image" parent="cube225" index="0" unique_id=893206886]
+texture = ExtResource("6_7mycd")
+
+[node name="VBoxContainer" parent="cube225" index="1" unique_id=1297630833]
+offset_right = 2009.0
+offset_bottom = 1070.0
+
+[node name="LabelTop" parent="cube225/VBoxContainer" index="0" unique_id=235651543]
+text = "Air Cooling | Cube 225-Y"
+
+[node name="LabelTopResisdential" parent="cube225/VBoxContainer" index="1" unique_id=1213854588]
+text = "Outdoor Distributed
+Energy Storage System"
+autowrap_mode = 2
+
+[node name="LabelDesc" parent="cube225" index="2" unique_id=390103992]
+text = "The Cube 225-Y integrated photovoltaic - energy storage system adopts an integrated multi-functional design. It supports photovoltaic access and seamless grid-connected and off-grid switching, covering all scenarios of photovoltaics, energy storage, and diesel generators. Equipped with an intelligent and efficient Static Transfer Switch (STS), the grid-connected and off-grid switching time is less than 20ms to ensure stable power supply. It provides users with functions such as peak-shaving and valley-filling, demand response for grid dispatching, and power backup services, improving the off-grid power self-sufficiency rate."
+label_settings = SubResource("LabelSettings_5vw27")
+
+[node name="VBoxContainer" parent="cube225/HBoxContainer/Panel1" parent_id_path=PackedInt32Array(1021578458, 146151158) index="0" unique_id=713923525]
+offset_left = -257.0
+offset_top = -326.0
+offset_right = 257.0
+offset_bottom = 326.0
+
+[node name="Label" parent="cube225/HBoxContainer/Panel1/VBoxContainer" index="0" unique_id=881516082]
+text = "Diverse Functions
+"
+autowrap_mode = 2
+
+[node name="Label2" parent="cube225/HBoxContainer/Panel1/VBoxContainer" index="1" unique_id=2034832736]
+text = "With standardized structure, components like PV charging modules, grid/off-grid switching modules, and power-frequency transformers can be optionally chosen for micro-grids, integrating an all-in-one PV - storage system cabinet"
+
+[node name="VBoxContainer" parent="cube225/HBoxContainer/Panel2" parent_id_path=PackedInt32Array(1021578458, 1541548425) index="0" unique_id=1489062897]
+offset_left = -223.5
+offset_top = -274.0
+offset_right = 223.5
+offset_bottom = 274.0
+
+[node name="Label" parent="cube225/HBoxContainer/Panel2/VBoxContainer" index="0" unique_id=1188611501]
+text = "Safe & Reliable
+"
+
+[node name="Label2" parent="cube225/HBoxContainer/Panel2/VBoxContainer" index="1" unique_id=728807213]
+text = "Selects A-grade LFP 314Ah battery cells from Tier 1 brands. It has stable performance, a long cycle life, and can reach up to 8000 charge - discharge cycles"
+
+[node name="Label" parent="cube225/HBoxContainer/Panel3/VBoxContainer" parent_id_path=PackedInt32Array(1021578458, 45560476) index="0" unique_id=1796206169]
+text = "Millisecond-level Seamless Switching
+"
+
+[node name="Label2" parent="cube225/HBoxContainer/Panel3/VBoxContainer" parent_id_path=PackedInt32Array(1021578458, 45560476) index="1" unique_id=387013047]
+text = "Seamless grid-connected and off-grid switching within < 20ms to ensure uninterrupted power supply"
+
+[node name="VBoxContainer" parent="cube225/HBoxContainer/Panel4" parent_id_path=PackedInt32Array(1021578458, 1287956616) index="0" unique_id=404412639]
+offset_left = -241.5
+offset_right = 241.5
+
+[node name="Label" parent="cube225/HBoxContainer/Panel4/VBoxContainer" index="0" unique_id=1074766516]
+text = "Intelligent Operation and Maintenance
+"
+
+[node name="Label2" parent="cube225/HBoxContainer/Panel4/VBoxContainer" index="1" unique_id=1621885325]
+text = "Ultra-simple modular design reshapes the operation and maintenance experience; precise cloud-based analysis optimizes operation costs"
+
+[node name="avo-logo2" type="TextureRect" parent="." unique_id=1385005557]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -780.5
+offset_top = -385.0
+offset_right = 780.5
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("3_5vw27")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="avo-solar2" type="TextureRect" parent="." unique_id=1206310935]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -780.5
+offset_top = 123.0
+offset_right = 780.5
+offset_bottom = 623.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("3_5vw27")
+expand_mode = 1
+stretch_mode = 5
 
 [editable path="ebox16"]
 [editable path="rove"]
+[editable path="cube225"]
