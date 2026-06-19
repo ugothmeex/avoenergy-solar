@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://danxa60ch7ko7"]
+
+[ext_resource type="FontFile" uid="uid://dmwmmc2tvsd1q" path="res://Inter/static/Inter_24pt-Light.ttf" id="1_edfsi"]
+
+[resource]
+font = ExtResource("1_edfsi")
+font_size = 40

@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://dm4nt5qpa701g"]
+
+[ext_resource type="Texture2D" uid="uid://bq3var2vqodsy" path="res://assets/bg1.png" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dnliuqcqwtu71" path="res://main.gd" id="1_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dp44pvvlgsgl7" path="res://ebox5.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://df5cp01qrw525" path="res://assets/ebox16-l.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://xgt3b6y3e3hi" path="res://assets/rove.png" id="5_lquwl"]
+
+[sub_resource type="Animation" id="Animation_kek77"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bg:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1800, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4c57u"]
+resource_name = "new_animation"
+length = 120.0
+loop_mode = 2
+step = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bg:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1800, 0), Vector2(-1800, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2yge"]
+_data = {
+&"RESET": SubResource("Animation_kek77"),
+&"new_animation": SubResource("Animation_4c57u")
+}
+
+[node name="main" type="CanvasLayer" unique_id=56481423]
+script = ExtResource("1_5vw27")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=915996816]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1854.0
+offset_right = 1854.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(1800, 0)
+texture = ExtResource("1_0xm2m")
+stretch_mode = 6
+
+[node name="Color" type="ColorRect" parent="." unique_id=389794929]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+color = Color(0, 0, 0, 0.59607846)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024334128]
+libraries/ = SubResource("AnimationLibrary_h2yge")
+autoplay = &"new_animation"
+
+[node name="ebox5" parent="." unique_id=1050648686 instance=ExtResource("2_0xm2m")]
+visible = false
+
+[node name="ebox16" parent="." unique_id=1729303487 instance=ExtResource("2_0xm2m")]
+visible = false
+
+[node name="Image" parent="ebox16" index="0" unique_id=893206886]
+texture = ExtResource("4_1bvp3")
+
+[node name="LabelTop" parent="ebox16/VBoxContainer" parent_id_path=PackedInt32Array(1729303487, 1297630833) index="0" unique_id=235651543]
+text = "Low Voltage | Ebox 16"
+
+[node name="LabelTopResisdential" parent="ebox16/VBoxContainer" parent_id_path=PackedInt32Array(1729303487, 1297630833) index="1" unique_id=1213854588]
+text = "16kWh Residential Battery"
+
+[node name="LabelDesc" parent="ebox16" index="2" unique_id=390103992]
+text = "The 16kWh residential energy storage battery adopts 314Ah high-cycle cells, boasting large capacity and stable performance. It features excellent safety and a long service life, while supporting high-current discharge. Equipped with multiple application scenarios, it is widely compatible with household use, backup power and off-grid scenarios, providing reliable energy storage solutions for families."
+
+[node name="Label2" parent="ebox16/HBoxContainer/Panel1/VBoxContainer" parent_id_path=PackedInt32Array(1729303487, 713923525) index="1" unique_id=2034832736]
+text = "Up to 16 units in parallel, 16~256kWh capacity"
+
+[node name="Label2" parent="ebox16/HBoxContainer/Panel2/VBoxContainer" parent_id_path=PackedInt32Array(1729303487, 1489062897) index="1" unique_id=728807213]
+text = "High Energy Density 314Ah LFP Cells, 200A Continuous Charge/Discharge Current, and Intelligent Cell Balancing."
+
+[node name="Label" parent="ebox16/HBoxContainer/Panel3/VBoxContainer" parent_id_path=PackedInt32Array(1729303487, 45560476) index="0" unique_id=1796206169]
+text = "Easy Installation
+"
+
+[node name="Label2" parent="ebox16/HBoxContainer/Panel3/VBoxContainer" parent_id_path=PackedInt32Array(1729303487, 45560476) index="1" unique_id=387013047]
+text = "Designed light and simple with built-in pulleys, it allows one-person moving and installation."
+
+[node name="Label" parent="ebox16/HBoxContainer/Panel4/VBoxContainer" parent_id_path=PackedInt32Array(1729303487, 404412639) index="0" unique_id=1074766516]
+text = "Intelligent Management
+"
+
+[node name="Label2" parent="ebox16/HBoxContainer/Panel4/VBoxContainer" parent_id_path=PackedInt32Array(1729303487, 404412639) index="1" unique_id=1621885325]
+text = "Built-in WiFi for seamless remote intelligent APP monitoring and real-time management; supports APP OTA & remote firmware updates to cut after-sales costs."
+
+[node name="rove" parent="." unique_id=907655103 instance=ExtResource("2_0xm2m")]
+
+[node name="Image" parent="rove" index="0" unique_id=893206886]
+texture = ExtResource("5_lquwl")
+
+[node name="VBoxContainer" parent="rove" index="1" unique_id=1297630833]
+offset_right = 2009.0
+offset_bottom = 1070.0
+
+[node name="LabelTop" parent="rove/VBoxContainer" index="0" unique_id=235651543]
+text = "Rove Series"
+
+[node name="LabelTopResisdential" parent="rove/VBoxContainer" index="1" unique_id=1213854588]
+text = "3.6/6.0/12.0KW Residential Off-grid Inverter"
+autowrap_mode = 2
+
+[node name="LabelDesc" parent="rove" index="2" unique_id=390103992]
+text = "Off-grid inverter is a power conversion device independent of the public power grid. Its core function is to convert the electrical energy output by DC power sources such as solar panels and storage batteries into AC electrical energy that can be directly used by household appliances . It is widely used in areas without grid coverage or with unstable power grids."
+
+[node name="Label" parent="rove/HBoxContainer/Panel1/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 713923525) index="0" unique_id=881516082]
+text = "Detachable Dust Coverign
+"
+autowrap_mode = 2
+
+[node name="Label2" parent="rove/HBoxContainer/Panel1/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 713923525) index="1" unique_id=2034832736]
+text = "Detachable dust cover for harsh environment,easy to replace."
+
+[node name="VBoxContainer" parent="rove/HBoxContainer/Panel2" parent_id_path=PackedInt32Array(907655103, 1541548425) index="0" unique_id=1489062897]
+offset_left = -223.5
+offset_top = -333.5
+offset_right = 223.5
+offset_bottom = 333.5
+
+[node name="Label" parent="rove/HBoxContainer/Panel2/VBoxContainer" index="0" unique_id=1188611501]
+text = "Lithium Battery Activation
+"
+
+[node name="Label2" parent="rove/HBoxContainer/Panel2/VBoxContainer" index="1" unique_id=728807213]
+text = "When the battery enters hibernation due to low power, the inverter can use photovoltaic power or mains power to charge and activate the battery, without the need for manual operation."
+
+[node name="Label" parent="rove/HBoxContainer/Panel3/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 45560476) index="0" unique_id=1796206169]
+text = "Easy Installation
+"
+
+[node name="Label2" parent="rove/HBoxContainer/Panel3/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 45560476) index="1" unique_id=387013047]
+text = "Designed light and simple with built-in pulleys, it allows one-person moving and installation."
+
+[node name="Label" parent="rove/HBoxContainer/Panel4/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 404412639) index="0" unique_id=1074766516]
+text = "Intelligent Management
+"
+
+[node name="Label2" parent="rove/HBoxContainer/Panel4/VBoxContainer" parent_id_path=PackedInt32Array(907655103, 404412639) index="1" unique_id=1621885325]
+text = "Built-in WiFi for seamless remote intelligent APP monitoring and real-time management; supports APP OTA & remote firmware updates to cut after-sales costs."
+
+[editable path="ebox16"]
+[editable path="rove"]
