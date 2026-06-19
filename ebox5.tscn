@@ -9,7 +9,7 @@
 [ext_resource type="LabelSettings" uid="uid://danxa60ch7ko7" path="res://font_tres/benefit-description.tres" id="8_chlj1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idp6v"]
-bg_color = Color(0.18281268, 0.18281268, 0.18281268, 0.90000004)
+bg_color = Color(0.7528677, 0.13816993, 0.15594886, 0.90000004)
 corner_radius_top_left = 64
 corner_radius_top_right = 64
 corner_radius_bottom_right = 64

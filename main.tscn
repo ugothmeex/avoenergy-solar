@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bq3var2vqodsy" path="res://assets/bg1.png" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dnliuqcqwtu71" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dp44pvvlgsgl7" path="res://ebox5.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cyhykpbduf8qv" path="res://assets/bg-hi.png" id="2_4c57u"]
 [ext_resource type="Texture2D" uid="uid://5lu6cdt8ty0g" path="res://AVO LOGO/avo-logo.png" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://df5cp01qrw525" path="res://assets/ebox16-l.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bws3pjr1lbvn5" path="res://assets/AVO ENERGY.png" id="4_kek77"]
 [ext_resource type="Texture2D" uid="uid://xgt3b6y3e3hi" path="res://assets/rove.png" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://blkybmr7gpjv2" path="res://assets/cube225.png" id="6_7mycd"]
 [ext_resource type="FontFile" uid="uid://tbedcp3qc5y6" path="res://Inter/static/Inter_18pt-Regular.ttf" id="7_272bh"]
@@ -66,7 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(1800, 0)
-texture = ExtResource("1_0xm2m")
+texture = ExtResource("2_4c57u")
 stretch_mode = 6
 
 [node name="Bg2" type="TextureRect" parent="." unique_id=420076497]
@@ -86,6 +88,7 @@ stretch_mode = 6
 
 [node name="BgColor" type="ColorRect" parent="." unique_id=389794929]
 unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.5)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -122,7 +125,7 @@ offset_bottom = -3227.0
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
-texture = ExtResource("3_5vw27")
+texture = ExtResource("4_kek77")
 expand_mode = 1
 stretch_mode = 5
 
@@ -131,7 +134,6 @@ libraries/ = SubResource("AnimationLibrary_h2yge")
 autoplay = &"new_animation"
 
 [node name="ebox5" parent="." unique_id=1050648686 instance=ExtResource("2_0xm2m")]
-visible = false
 
 [node name="ebox16" parent="." unique_id=1729303487 instance=ExtResource("2_0xm2m")]
 visible = false
@@ -305,22 +307,21 @@ offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
-texture = ExtResource("3_5vw27")
+texture = ExtResource("4_kek77")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="avo-solar2" type="TextureRect" parent="." unique_id=1206310935]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 500)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -780.5
-offset_top = 123.0
+offset_top = 181.0
 offset_right = 780.5
-offset_bottom = 623.0
+offset_bottom = 485.0
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
