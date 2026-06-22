@@ -10,21 +10,27 @@ extends CanvasLayer
 @onready var avo_logo_2: TextureRect = %"avo-logo2"
 @onready var avo_solar: TextureRect = %"avo-solar"
 @onready var avo_solar_2: TextureRect = %"avo-solar2"
+@onready var blacker: ColorRect = %Blacker
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# setup initials
-	avo_logo_2.show()
-	avo_solar_2.show()
+	avo_logo_2.hide()
+	avo_solar_2.hide()
 	avo_logo_2.modulate.a = 0
 	avo_solar_2.modulate.a = 0
 	avo_logo.modulate.a = 0
 	avo_solar.modulate.a = 0
-	await get_tree().process_frame
+	blacker.self_modulate.a = 1
+	bg_color.modulate.a = 0.6
+	await get_tree().create_timer(3).timeout
+	avo_logo_2.show()
+	avo_solar_2.show()
 	var tw := create_tween()
 	# un-dim
-	tw.tween_property(bg_color, "modulate:a", 0.7, 0.2).from(1.0)
+	tw.tween_property(blacker, "self_modulate:a", 0.0, 0.2)
+	#tw.tween_property(bg_color, "self_modulate:a", 0.6, 0.5).from(1.0)
 	# show mini logos
 	tw.tween_property(avo_logo, "modulate:a", 1.0, 0.2)
 	tw.parallel().tween_property(avo_solar, "modulate:a", 1.0, 0.2)
@@ -35,7 +41,7 @@ func _ready() -> void:
 		e.hide()
 	for e:Ebox in [ebox_5, ebox_16, rove, cube_225]:
 		await e.run()
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(7).timeout
 		e.hide()
 	
 	tw = create_tween()
@@ -43,7 +49,7 @@ func _ready() -> void:
 	tw.tween_property(avo_logo, "modulate:a", 0.0, 0.1)
 	tw.parallel().tween_property(avo_solar, "modulate:a", 0.0, 0.1)
 	# show large logos
-	tw.tween_property(bg_color, "self_modulate:a", 1.0, 0.2)
+	tw.tween_property(bg_color, "self_modulate:a", 0.7, 0.2)
 	tw.tween_property(avo_logo_2, "modulate:a", 1.0, 0.2)
 	tw.parallel().tween_property(avo_logo_2, "offset_transform_position:y", 0, 0.2).from(100)
 	tw.tween_property(avo_solar_2, "modulate:a", 1.0, 0.2)
@@ -56,7 +62,8 @@ func _ready() -> void:
 	tw.tween_property(avo_solar_2, "modulate:a", 0.0, 0.2)
 	tw.parallel().tween_property(avo_solar_2, "offset_transform_position:y", 100, 0.2)
 	# dim
-	tw.tween_property(bg_color, "modulate:a", 1.0, 0.2)
+	tw.tween_property(blacker, "self_modulate:a", 1.0, 0.2)
+	#tw.tween_property(bg_color, "self_modulate:a", 1.0, 0.2)
 	await tw.finished
 	#await get_tree().create_timer(1).timeout
 	get_tree().quit()

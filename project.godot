@@ -19,14 +19,13 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=2400
 window/size/viewport_height=3600
-window/size/window_width_override=400
-window/size/window_height_override=600
+window/size/window_width_override=1200
+window/size/window_height_override=1800
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [editor]
 
-movie_writer/video_quality=1.0
 movie_writer/movie_file="C:/Users/rhnpc/OneDrive/Documents/avo-solar.avi"
 
 [physics]

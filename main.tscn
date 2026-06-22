@@ -11,6 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://blkybmr7gpjv2" path="res://assets/cube225.png" id="6_7mycd"]
 [ext_resource type="FontFile" uid="uid://tbedcp3qc5y6" path="res://Inter/static/Inter_18pt-Regular.ttf" id="7_272bh"]
 
+[sub_resource type="Gradient" id="Gradient_4c57u"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ip7so"]
+gradient = SubResource("Gradient_4c57u")
+fill_to = Vector2(0, 1)
+
 [sub_resource type="Animation" id="Animation_kek77"]
 length = 0.001
 tracks/0/type = "value"
@@ -97,6 +104,14 @@ grow_vertical = 2
 offset_transform_enabled = true
 color = Color(0, 0, 0, 1)
 
+[node name="blur" type="TextureRect" parent="." unique_id=6527095]
+self_modulate = Color(1, 1, 1, 0.6)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 432.0
+grow_horizontal = 2
+texture = SubResource("GradientTexture2D_ip7so")
+
 [node name="avo-logo" type="TextureRect" parent="." unique_id=870594567]
 unique_name_in_owner = true
 anchors_preset = 15
@@ -133,6 +148,7 @@ libraries/ = SubResource("AnimationLibrary_h2yge")
 autoplay = &"new_animation"
 
 [node name="ebox5" parent="." unique_id=1050648686 instance=ExtResource("2_0xm2m")]
+visible = false
 
 [node name="ebox16" parent="." unique_id=1729303487 instance=ExtResource("2_0xm2m")]
 visible = false
@@ -327,6 +343,16 @@ offset_transform_enabled = true
 texture = ExtResource("3_5vw27")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Blacker" type="ColorRect" parent="." unique_id=1854020128]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+color = Color(0, 0, 0, 1)
 
 [editable path="ebox16"]
 [editable path="rove"]
