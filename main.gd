@@ -24,7 +24,7 @@ func _ready() -> void:
 	avo_solar.modulate.a = 0
 	blacker.self_modulate.a = 1
 	bg_color.modulate.a = 0.6
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(6).timeout
 	avo_logo_2.show()
 	avo_solar_2.show()
 	var tw := create_tween()

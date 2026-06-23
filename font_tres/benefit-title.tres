@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://ccr7eq04e1elr"]
 
-[ext_resource type="FontFile" uid="uid://tbedcp3qc5y6" path="res://Inter/static/Inter_18pt-Regular.ttf" id="1_n260r"]
+[ext_resource type="FontFile" uid="uid://b717kxq3d3k4f" path="res://Inter/static/Inter_18pt-Bold.ttf" id="1_n260r"]
 
 [resource]
 font = ExtResource("1_n260r")

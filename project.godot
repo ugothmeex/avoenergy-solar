@@ -26,6 +26,7 @@ window/stretch/aspect="expand"
 
 [editor]
 
+movie_writer/video_quality=1.0
 movie_writer/movie_file="C:/Users/rhnpc/OneDrive/Documents/avo-solar.avi"
 
 [physics]
